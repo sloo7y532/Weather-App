@@ -17,9 +17,14 @@
   align-items: center;
   left: 0;
   top: 0;
-  background: linear-gradient(to bottom, rgba(2, 11, 103, 0.575), rgba(96, 117, 211, 0.756), rgba(2, 11, 103, 0.575));
+  background: linear-gradient(
+    to bottom,
+    rgba(2, 11, 103, 0.575),
+    rgba(96, 117, 211, 0.756),
+    rgba(2, 11, 103, 0.575)
+  );
 }
-#alert{
+#alert {
   position: absolute;
   width: 20vw;
   bottom: 0px;

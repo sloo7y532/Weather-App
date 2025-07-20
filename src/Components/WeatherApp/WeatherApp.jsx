@@ -22,10 +22,7 @@ function WeaatherApp() {
 
   let api_key = "2a48a135e7cd751032c71ded3a64d571";
 
-  useEffect(() => {
-    handleSearch();
-  }, []);
-
+  // handle search
   async function handleSearch() {
     if (cityInput === "") {
     } else {
@@ -38,6 +35,7 @@ function WeaatherApp() {
         setHumidity(data.main.humidity);
         setWindSpeed(data.wind.speed);
         setCity(data.name);
+        // handle weather icon
         switch (data.weather[0].main) {
           case "Clouds":
             setWeatherIcon(cloud_icon);
@@ -65,19 +63,26 @@ function WeaatherApp() {
     }
     setCityInput("");
   }
+
+  // handle close snackbar
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-
     setWrongCity(false);
   };
 
+  // handle key down enter
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      handleSearch()
+      handleSearch();
     }
   };
+
+  // handle use effect
+  useEffect(() => {
+    handleSearch();
+  }, []);
   return (
     <div className="page">
       <div className="container">
